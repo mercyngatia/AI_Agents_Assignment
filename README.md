@@ -174,7 +174,7 @@ Full system integration with potential learning agents for continuous optimizati
 # n8n Screenshots Overview
 
 ```markdown
-![Workflow Screenshot](screenshots/aoutopart_agent.png)
+![Workflow Screenshot](screenshots/aoutopart_agent.pngaoutopart_agent.png)
 
 ![Output Screenshot](screenshots/output.png)
 ```
@@ -186,6 +186,4 @@ Full system integration with potential learning agents for continuous optimizati
 Ask for an invite to view the project:
 [https://macymacy.app.n8n.cloud/workflow/K9svQMFt0W5UHn2d](https://macymacy.app.n8n.cloud/workflow/K9svQMFt0W5UHn2d)
 
----
 
-If you want, I can also format this into a **downloadable PDF**, **upload-ready GitHub repository structure**, or **add a table of contents**.
