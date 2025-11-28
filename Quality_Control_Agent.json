@@ -1,0 +1,119 @@
+{
+  "name": "Quality Control Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "68f118ff-c576-4931-84da-9b748b77edc0",
+      "name": "When chat message received",
+      "webhookId": "0da7637c-1b3e-4b51-9f27-5c9749743996"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a quality control system that analyzes sensor data to identify defects."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "57b78a41-0b7b-404f-afd1-cd00ada6b8d8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        208,
+        144
+      ],
+      "id": "bb45dfee-e0e0-4989-aa75-e4631fea7089",
+      "name": "OpenAI Chat Model",
+      "notesInFlow": false,
+      "credentials": {
+        "openAiApi": {
+          "id": "jIs9YA57r2CmTWAd",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        304,
+        144
+      ],
+      "id": "bcd4110f-aa1d-4141-a3ef-5efa0b1eccb5",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ddc66475-9075-4ad6-883a-718b23e50f21",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "78c1bad057663ae28dd6acb106b3af0785daf6ca78050a72a2c4264fd01684a0"
+  },
+  "id": "K9svQMFt0W5UHn2d",
+  "tags": []
+}
