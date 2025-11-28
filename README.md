@@ -174,7 +174,7 @@ Full system integration with potential learning agents for continuous optimizati
 # n8n Screenshots Overview
 
 ```markdown
-![Workflow Screenshot](screenshots/aoutopart_agent.pngaoutopart_agent.png)
+![Workflow Screenshot](screenshots/aoutopart_agent.png)
 
 ![Output Screenshot](screenshots/output.png)
 ```
